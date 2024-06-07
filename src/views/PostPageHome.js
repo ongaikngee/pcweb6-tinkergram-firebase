@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Container, Image, Nav, Navbar, Row } from "react-bootstrap";
+import { Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NaviBar from "../components/NaviBar";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -27,16 +28,7 @@ export default function PostPageHome() {
 
   return (
     <>
-      <Navbar variant="light" bg="light">
-        <Container>
-          <Navbar.Brand href="/">Tinkergram</Navbar.Brand>
-          <Nav>
-            <Nav.Link href="/spin">Spin</Nav.Link>
-            <Nav.Link href="/drag">Drag</Nav.Link>
-            <Nav.Link href="/add">New Post</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+      <NaviBar />
       <Container>
         <Row>
           <ImagesRow />

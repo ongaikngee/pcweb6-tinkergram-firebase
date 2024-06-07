@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import NaviBar from "../components/NaviBar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
@@ -14,6 +15,7 @@ export default function SignUpPage() {
 
     return (
         <Container>
+            <NaviBar />
             <h1 className="my-3">Sign up for an account</h1>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

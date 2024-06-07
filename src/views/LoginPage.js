@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NaviBar from "../components/NaviBar";
 import { Button, Container, Form } from "react-bootstrap";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +14,7 @@ export default function LoginPage() {
 
     return (
         <Container>
+            <NaviBar/>
             <h1 className="my-3">Login to your account</h1>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

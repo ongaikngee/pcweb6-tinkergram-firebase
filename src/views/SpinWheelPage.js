@@ -1,8 +1,18 @@
-import React, { useState } from "react";
-import { Container, Nav, Navbar, Button, Alert } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container, Button, Alert } from "react-bootstrap";
+import NaviBar from "../components/NaviBar";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 import { Wheel } from 'react-custom-roulette'
 
 export default function SpinWheelPage() {
+	const [user, loading] = useAuthState(auth);
+	const navigate = useNavigate();
+	useEffect(() => {
+		if (loading) return;
+		if (!user) return navigate("/login");
+	}, [navigate, user, loading]);
 
     const [mustSpin, setMustSpin] = useState(false);
     const [prizeNumber, setPrizeNumber] = useState(0);
@@ -54,15 +64,7 @@ export default function SpinWheelPage() {
     }
     return (
         <div>
-            <Navbar variant="light" bg="light">
-                <Container>
-                    <Navbar.Brand href="/">Tinkergram</Navbar.Brand>
-                    <Nav>
-                        <Nav.Link href="/spin">Spin</Nav.Link>
-                        <Nav.Link href="/add">New Post</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
+            <NaviBar />
             <Container>
                 <Wheel
                     mustStartSpinning={mustSpin}
