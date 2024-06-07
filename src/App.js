@@ -7,6 +7,7 @@ import PostPageAdd from "./views/PostPageAdd";
 import PostPageDetails from "./views/PostPageDetails";
 import PostPageUpdate from "./views/PostPageUpdate";
 import SpinWheelPage from './views/SpinWheelPage';
+import DragCompPage from './views/DragCompPage';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/post/:id" element={<PostPageDetails />} />
         <Route path="/update/:id" element={<PostPageUpdate />} />
         <Route path="/spin" element={<SpinWheelPage />} />
+        <Route path="/drag" element={<DragCompPage />} />
       </Routes>
     </BrowserRouter>
 

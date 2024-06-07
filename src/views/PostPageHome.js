@@ -32,6 +32,7 @@ export default function PostPageHome() {
           <Navbar.Brand href="/">Tinkergram</Navbar.Brand>
           <Nav>
             <Nav.Link href="/spin">Spin</Nav.Link>
+            <Nav.Link href="/drag">Drag</Nav.Link>
             <Nav.Link href="/add">New Post</Nav.Link>
           </Nav>
         </Container>
